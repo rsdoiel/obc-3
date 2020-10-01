@@ -110,6 +110,10 @@ let obc =
       Filename.chop_suffix base ".m"
     else if Filename.check_suffix in_file ".mod" then 
       Filename.chop_suffix base ".mod"
+    else if Filename.check_suffix in_file ".Mod" then 
+      Filename.chop_suffix base ".Mod"
+    else if Filename.check_suffix in_file ".obn" then 
+      Filename.chop_suffix base ".obn"
     else
       usage () in
   if !Config.debug = 0 then
