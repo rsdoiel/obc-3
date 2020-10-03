@@ -241,8 +241,6 @@ for f in $src; do
     case $f in
 	*.m) base=`basename $f .m`;;
 	*.mod) base=`basename $f .mod`;;
-	*.Mod) base=`basename $f .Mod`;;
-	*.obn) base=`basename $f .obn`;;
     esac
     compile $f $base.k $base.c
     if [ $status -ne 0 ]; then exit $status; fi
@@ -257,4 +255,5 @@ done
 if $link; then linkit; fi
 
 exit $status
+
 

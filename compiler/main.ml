@@ -105,23 +105,9 @@ let obc =
   Arg.parse spec (function s -> fns := !fns @ [s]) "Usage:";
   if List.length !fns <> 1 then usage ();
   let in_file = List.hd !fns in
-<<<<<<< HEAD
-  let base = Filename.basename in_file in
-  let base_name =
-    if Filename.check_suffix in_file ".m" then 
-      Filename.chop_suffix base ".m"
-    else if Filename.check_suffix in_file ".mod" then 
-      Filename.chop_suffix base ".mod"
-    else if Filename.check_suffix in_file ".Mod" then 
-      Filename.chop_suffix base ".Mod"
-    else if Filename.check_suffix in_file ".obn" then 
-      Filename.chop_suffix base ".obn"
-    else
-      usage () in
-=======
->>>>>>> 2d17330e532539cd6714cf38ccd5e0e68ae964d1
   if !Config.debug = 0 then
     catch_failure compiler in_file
   else
     compiler in_file;
   exit 0
+
